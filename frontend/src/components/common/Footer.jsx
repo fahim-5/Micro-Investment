@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo6 from "../../assets/logo/logo6.png";
 import {
   FiFacebook,
   FiTwitter,
@@ -59,12 +60,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="h-12 w-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">৳</span>
+              <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-transparent">
+                <img
+                  src={logo6}
+                  alt="Investra logo"
+                  className="h-12 w-12 object-contain"
+                />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-white">Bangla Invest</h2>
-                <p className="text-sm text-green-400">Investing for everyone</p>
+                <h2 className="text-xl font-bold text-white">Investra</h2>
+                <p className="text-sm text-green-400">Start Small. Grow Big</p>
               </div>
             </div>
 

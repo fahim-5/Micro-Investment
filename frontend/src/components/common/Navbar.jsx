@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logoImg from "../../assets/logo/logo6.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import {
@@ -96,19 +97,21 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-1">
               <div
                 className="flex items-center cursor-pointer"
                 onClick={() => navigate("/")}
               >
-                <div className="h-10 w-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-bold">৳</span>
+                <div className="h-10 w-10 flex items-center justify-center">
+                  <img
+                    src={logoImg}
+                    alt="Investra logo"
+                    className="h-10 w-10 object-contain"
+                  />
                 </div>
                 <div className="ml-3">
-                  <h1 className="text-lg font-bold text-white">
-                    Bangla Invest
-                  </h1>
-                  <p className="text-xs text-gray-400">Smart investing</p>
+                  <h1 className="text-lg font-bold text-white">Investra</h1>
+                  <p className="text-sm text-green-400">Start Small. Grow Big</p>
                 </div>
               </div>
             </div>
