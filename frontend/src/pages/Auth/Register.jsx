@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   FiUser,
@@ -44,6 +44,11 @@ const Register = () => {
       return true;
     }
   });
+
+  // Always show the guide when the Register page mounts so users see required docs
+  useEffect(() => {
+    setShowGuide(true);
+  }, []);
 
   const acceptGuide = () => {
     try {
