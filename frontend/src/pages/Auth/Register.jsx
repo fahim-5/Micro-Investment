@@ -8,6 +8,7 @@ import {
   FiArrowLeft,
   FiCalendar,
   FiCreditCard,
+  FiCheck,
 } from "react-icons/fi";
 import { MdOutlineBadge, MdAccountBalance } from "react-icons/md";
 import RegisterStep1 from "../../components/forms/RegisterStep1";
@@ -210,6 +211,14 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-cyan-50 flex items-center justify-center p-4 font-sans">
+      {/* Subtle blurred background image */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={guideImg}
+          alt="background"
+          className="w-full h-full object-cover opacity-20 blur-md"
+        />
+      </div>
       {showGuide && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
           <div className="bg-white rounded-2xl w-full max-w-4xl flex overflow-hidden shadow-2xl">
@@ -230,23 +239,68 @@ const Register = () => {
                   ✕
                 </button>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              <h3 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-gray-600 to-emerald-400 bg-clip-text text-transparent mb-4">
                 Please keep the soft copy of the following documents ready:
               </h3>
-              <ul className="space-y-3 text-gray-700 mb-6 list-inside">
-                <li>• Applicant's and Nominee's National ID Card</li>
-                <li>
-                  • Colour Photos and Signatures of the Applicant(s) and
-                  Nominee(s)
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-8 w-8 bg-green-50 border border-green-200 flex items-center justify-center rounded-sm shadow-sm">
+                      <FiCheck className="text-green-700" size={18} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 font-medium">
+                    Applicant's and Nominee's National ID Card
+                  </p>
                 </li>
-                <li>• Blank Cheque / Bank Statement of the Applicant</li>
-                <li>• Applicant's E-TIN Certificate (if any)</li>
-                <li>
-                  • Soft copy of the Applicant's Signature, BO Setup
-                  Acknowledgement
+
+                <li className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-8 w-8 bg-green-50 border border-green-200 flex items-center justify-center rounded-sm shadow-sm">
+                      <FiCheck className="text-green-700" size={18} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 font-medium">
+                    Colour photos and signatures of the applicant(s) and
+                    nominee(s)
+                  </p>
+                </li>
+
+                <li className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-8 w-8 bg-green-50 border border-green-200 flex items-center justify-center rounded-sm shadow-sm">
+                      <FiCheck className="text-green-700" size={18} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 font-medium">
+                    Blank cheque or bank statement of the applicant
+                  </p>
+                </li>
+
+                <li className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-8 w-8 bg-green-50 border border-green-200 flex items-center justify-center rounded-sm shadow-sm">
+                      <FiCheck className="text-green-700" size={18} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 font-medium">
+                    Applicant's E-TIN certificate (if any)
+                  </p>
+                </li>
+
+                <li className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-8 w-8 bg-green-50 border border-green-200 flex items-center justify-center rounded-sm shadow-sm">
+                      <FiCheck className="text-green-700" size={18} />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 font-medium">
+                    Soft copy of the applicant's signature and BO setup
+                    acknowledgement
+                  </p>
                 </li>
               </ul>
-              <p className="text-xs text-gray-500 mb-6">
+              <p className="text-xs text-black border border-gray-300 bg-gray-100 p-3 rounded-lg mb-6">
                 Note: Mutual fund units will not be credited to your BO account
                 unless BO Account Number is provided. For any query, please
                 contact 09678666888
@@ -271,28 +325,7 @@ const Register = () => {
       </div>
 
       <div className="w-full max-w-6xl relative">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-red-600 rounded-full flex items-center justify-center shadow-lg">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-green-600">₹</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            {step === 1
-              ? "Create a new account"
-              : "Provide personal information"}
-          </h1>
-          <p className="text-gray-700 text-lg">
-            {step === 1
-              ? "Step 1: Basic information"
-              : "Step 2: Additional information"}
-          </p>
-        </div>
+        {/* Header removed to save vertical space (title shown inside card) */}
 
         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
           {/* Progress Bar */}
